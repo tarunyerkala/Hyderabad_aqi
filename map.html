@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_5f8c3e101dc8190a682110452accb419 {
+                #map_4a65f8b0377a307440c7e0e7d4682fea {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -57,8 +57,8 @@
 <div style="
 position: fixed; 
 bottom: 50px; left: 50px; width: 200px; height: 150px; 
-background-color: white; 
-border:2px solid grey; z-index:9999; font-size:14px;
+background-color: #f6efef; border-radius:20px;
+border:2px solid grey; z-index:9999; font-size:15px;
 padding: 10px;
 ">
 <b>AQI Legend</b><br>
@@ -68,14 +68,14 @@ padding: 10px;
 <span style="color:red">●</span> 151+ (Unhealthy)<br>
 </div>
     
-            <div class="folium-map" id="map_5f8c3e101dc8190a682110452accb419" ></div>
+            <div class="folium-map" id="map_4a65f8b0377a307440c7e0e7d4682fea" ></div>
         
 </body>
 <script>
     
     
-            var map_5f8c3e101dc8190a682110452accb419 = L.map(
-                "map_5f8c3e101dc8190a682110452accb419",
+            var map_4a65f8b0377a307440c7e0e7d4682fea = L.map(
+                "map_4a65f8b0377a307440c7e0e7d4682fea",
                 {
                     center: [17.385, 78.4867],
                     crs: L.CRS.EPSG3857,
@@ -92,7 +92,7 @@ padding: 10px;
 
         
     
-            var tile_layer_b94b2cf18ef87570d4ce7e95bc793a48 = L.tileLayer(
+            var tile_layer_83f2cbebb5ba1346d4f514dafdced272 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -109,17 +109,17 @@ padding: 10px;
             );
         
     
-            tile_layer_b94b2cf18ef87570d4ce7e95bc793a48.addTo(map_5f8c3e101dc8190a682110452accb419);
+            tile_layer_83f2cbebb5ba1346d4f514dafdced272.addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var marker_e0a1c2699d2516f3a90307d2416d1a13 = L.marker(
+            var marker_2a6a5cc027cfc14b16ebe502f7c3e97d = L.marker(
                 [17.4065, 78.5281],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_0d5ed7c825eda5b183e7d2992e704869 = L.AwesomeMarkers.icon(
+            var icon_cce4e2ddcb3bfde6bcb83fab5eefd143 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -130,34 +130,34 @@ padding: 10px;
             );
         
     
-        var popup_ae57b89ececdc0a34d73f60037884359 = L.popup({
+        var popup_ba246beba1df3e9c34dc13c46a23a7d6 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_8d2da2111dabf624bd04759fa24abe8e = $(`<div id="html_8d2da2111dabf624bd04759fa24abe8e" style="width: 100.0%; height: 100.0%;"><b>Osmania University</b><br>Type: University<br>AQI: 180</div>`)[0];
-                popup_ae57b89ececdc0a34d73f60037884359.setContent(html_8d2da2111dabf624bd04759fa24abe8e);
+                var html_5cd4d0ec0c3321ab9dc2cf67996caf9d = $(`<div id="html_5cd4d0ec0c3321ab9dc2cf67996caf9d" style="width: 100.0%; height: 100.0%;"><b>Osmania University</b><br>Type: University<br>AQI: 180</div>`)[0];
+                popup_ba246beba1df3e9c34dc13c46a23a7d6.setContent(html_5cd4d0ec0c3321ab9dc2cf67996caf9d);
             
         
 
-        marker_e0a1c2699d2516f3a90307d2416d1a13.bindPopup(popup_ae57b89ececdc0a34d73f60037884359)
+        marker_2a6a5cc027cfc14b16ebe502f7c3e97d.bindPopup(popup_ba246beba1df3e9c34dc13c46a23a7d6)
         ;
 
         
     
     
-                marker_e0a1c2699d2516f3a90307d2416d1a13.setIcon(icon_0d5ed7c825eda5b183e7d2992e704869);
+                marker_2a6a5cc027cfc14b16ebe502f7c3e97d.setIcon(icon_cce4e2ddcb3bfde6bcb83fab5eefd143);
             
     
-            var marker_dc13ded05e7fe78f885dd574b79e0779 = L.marker(
+            var marker_ff631f7d88caaea74ebde55efa2e1b20 = L.marker(
                 [17.5373, 78.5838],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_e0701809cacbf312ce943021aa43afcf = L.AwesomeMarkers.icon(
+            var icon_8c13822b074e9bc6d37729d0bceadd48 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -168,34 +168,34 @@ padding: 10px;
             );
         
     
-        var popup_30d06e714c57d04a09ab3889fc71c177 = L.popup({
+        var popup_30d99e74f90f185f0cc9cfbbb77688ac = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_46fabc38b823f467618d0929860a60bd = $(`<div id="html_46fabc38b823f467618d0929860a60bd" style="width: 100.0%; height: 100.0%;"><b>Jawaharnagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 180</div>`)[0];
-                popup_30d06e714c57d04a09ab3889fc71c177.setContent(html_46fabc38b823f467618d0929860a60bd);
+                var html_0f5be7b9010226484fd26ae1db198370 = $(`<div id="html_0f5be7b9010226484fd26ae1db198370" style="width: 100.0%; height: 100.0%;"><b>Jawaharnagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 180</div>`)[0];
+                popup_30d99e74f90f185f0cc9cfbbb77688ac.setContent(html_0f5be7b9010226484fd26ae1db198370);
             
         
 
-        marker_dc13ded05e7fe78f885dd574b79e0779.bindPopup(popup_30d06e714c57d04a09ab3889fc71c177)
+        marker_ff631f7d88caaea74ebde55efa2e1b20.bindPopup(popup_30d99e74f90f185f0cc9cfbbb77688ac)
         ;
 
         
     
     
-                marker_dc13ded05e7fe78f885dd574b79e0779.setIcon(icon_e0701809cacbf312ce943021aa43afcf);
+                marker_ff631f7d88caaea74ebde55efa2e1b20.setIcon(icon_8c13822b074e9bc6d37729d0bceadd48);
             
     
-            var marker_b7d1c511a7e3f479111c3ee7b905cb50 = L.marker(
+            var marker_1ee668e5343c95accfe5fa97d00b51b6 = L.marker(
                 [17.4933, 78.3915],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_048a45800307871fe5222ce899ed6efe = L.AwesomeMarkers.icon(
+            var icon_b12b6df28c2567a60ab1775d05c4ca2f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -206,34 +206,34 @@ padding: 10px;
             );
         
     
-        var popup_7f620712b407fc0fe3b367dba45c3b53 = L.popup({
+        var popup_bf35ce6db6b5a8852cdbbff882a3a50a = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_331af3d1c1376b6f9df499786a494c28 = $(`<div id="html_331af3d1c1376b6f9df499786a494c28" style="width: 100.0%; height: 100.0%;"><b>JNTU Hyderabad</b><br>Type: College<br>AQI: 140</div>`)[0];
-                popup_7f620712b407fc0fe3b367dba45c3b53.setContent(html_331af3d1c1376b6f9df499786a494c28);
+                var html_cf28fa3a0a7e9619e4da986b57ff344a = $(`<div id="html_cf28fa3a0a7e9619e4da986b57ff344a" style="width: 100.0%; height: 100.0%;"><b>JNTU Hyderabad</b><br>Type: College<br>AQI: 140</div>`)[0];
+                popup_bf35ce6db6b5a8852cdbbff882a3a50a.setContent(html_cf28fa3a0a7e9619e4da986b57ff344a);
             
         
 
-        marker_b7d1c511a7e3f479111c3ee7b905cb50.bindPopup(popup_7f620712b407fc0fe3b367dba45c3b53)
+        marker_1ee668e5343c95accfe5fa97d00b51b6.bindPopup(popup_bf35ce6db6b5a8852cdbbff882a3a50a)
         ;
 
         
     
     
-                marker_b7d1c511a7e3f479111c3ee7b905cb50.setIcon(icon_048a45800307871fe5222ce899ed6efe);
+                marker_1ee668e5343c95accfe5fa97d00b51b6.setIcon(icon_b12b6df28c2567a60ab1775d05c4ca2f);
             
     
-            var marker_c09ddb9fa4a821c96b4e47b74c6413d4 = L.marker(
+            var marker_8b172ff8dec69c39ef7d1e777af1adf0 = L.marker(
                 [17.4925, 78.393],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_d40cb20971d45c786ccb18d38ad5d2b3 = L.AwesomeMarkers.icon(
+            var icon_fb8ea4b083b056daab74ab55c87244bd = L.AwesomeMarkers.icon(
                 {
   "markerColor": "orange",
   "iconColor": "white",
@@ -244,34 +244,34 @@ padding: 10px;
             );
         
     
-        var popup_64c8115598c1e15394a2084fab834c14 = L.popup({
+        var popup_69181bffe767ad06abda7f2dfb773705 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7b21758c5e140f537db3624a2bd28512 = $(`<div id="html_7b21758c5e140f537db3624a2bd28512" style="width: 100.0%; height: 100.0%;"><b>Kukatpally Dump Yard</b><br>Type: Dump Yard<br>AQI: 140</div>`)[0];
-                popup_64c8115598c1e15394a2084fab834c14.setContent(html_7b21758c5e140f537db3624a2bd28512);
+                var html_d584603370822272cef256f17dc1f3a3 = $(`<div id="html_d584603370822272cef256f17dc1f3a3" style="width: 100.0%; height: 100.0%;"><b>Kukatpally Dump Yard</b><br>Type: Dump Yard<br>AQI: 140</div>`)[0];
+                popup_69181bffe767ad06abda7f2dfb773705.setContent(html_d584603370822272cef256f17dc1f3a3);
             
         
 
-        marker_c09ddb9fa4a821c96b4e47b74c6413d4.bindPopup(popup_64c8115598c1e15394a2084fab834c14)
+        marker_8b172ff8dec69c39ef7d1e777af1adf0.bindPopup(popup_69181bffe767ad06abda7f2dfb773705)
         ;
 
         
     
     
-                marker_c09ddb9fa4a821c96b4e47b74c6413d4.setIcon(icon_d40cb20971d45c786ccb18d38ad5d2b3);
+                marker_8b172ff8dec69c39ef7d1e777af1adf0.setIcon(icon_fb8ea4b083b056daab74ab55c87244bd);
             
     
-            var marker_b4b2f5f675f69392b850fdd09f537fb2 = L.marker(
+            var marker_7fa3ebe65ac5fdf1aadefebf1d759d8f = L.marker(
                 [17.4173, 78.3618],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_ded348ed9a31c1b1617fdc7e0e608adc = L.AwesomeMarkers.icon(
+            var icon_b38fda0a98b085b19e204b5720aadc6d = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgreen",
   "iconColor": "white",
@@ -282,34 +282,34 @@ padding: 10px;
             );
         
     
-        var popup_0b9f7387bf61df95a559aff4ba4c0d0d = L.popup({
+        var popup_331fb624efba734a91e4289be8b1dca1 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_566e1d952a89e6065268d0a28a8f73b0 = $(`<div id="html_566e1d952a89e6065268d0a28a8f73b0" style="width: 100.0%; height: 100.0%;"><b>Delhi Public School Khajaguda</b><br>Type: School<br>AQI: 95</div>`)[0];
-                popup_0b9f7387bf61df95a559aff4ba4c0d0d.setContent(html_566e1d952a89e6065268d0a28a8f73b0);
+                var html_4a618f7fc859b142eba75fb021cd70b5 = $(`<div id="html_4a618f7fc859b142eba75fb021cd70b5" style="width: 100.0%; height: 100.0%;"><b>Delhi Public School Khajaguda</b><br>Type: School<br>AQI: 95</div>`)[0];
+                popup_331fb624efba734a91e4289be8b1dca1.setContent(html_4a618f7fc859b142eba75fb021cd70b5);
             
         
 
-        marker_b4b2f5f675f69392b850fdd09f537fb2.bindPopup(popup_0b9f7387bf61df95a559aff4ba4c0d0d)
+        marker_7fa3ebe65ac5fdf1aadefebf1d759d8f.bindPopup(popup_331fb624efba734a91e4289be8b1dca1)
         ;
 
         
     
     
-                marker_b4b2f5f675f69392b850fdd09f537fb2.setIcon(icon_ded348ed9a31c1b1617fdc7e0e608adc);
+                marker_7fa3ebe65ac5fdf1aadefebf1d759d8f.setIcon(icon_b38fda0a98b085b19e204b5720aadc6d);
             
     
-            var marker_653e694d2cc4fe32a64c766d8d761b5f = L.marker(
+            var marker_0cb1e92ce3d8179d8afba13fecab32b0 = L.marker(
                 [17.4165, 78.3635],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_fd0575d5d0825228da97970d9c820f13 = L.AwesomeMarkers.icon(
+            var icon_61154ef0fd0696a381d2cd7cdbc2cf05 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgreen",
   "iconColor": "white",
@@ -320,34 +320,34 @@ padding: 10px;
             );
         
     
-        var popup_a15cfcdf11c549491230d7b0a2d9c7b9 = L.popup({
+        var popup_3cb8cea2029026c2a2f23987b9d97856 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_b661418ab423f67a43b2e0de0abbc16a = $(`<div id="html_b661418ab423f67a43b2e0de0abbc16a" style="width: 100.0%; height: 100.0%;"><b>Khajaguda Dump Area</b><br>Type: Dump Yard<br>AQI: 95</div>`)[0];
-                popup_a15cfcdf11c549491230d7b0a2d9c7b9.setContent(html_b661418ab423f67a43b2e0de0abbc16a);
+                var html_fce1547d9193ed383ee52ecd624185d8 = $(`<div id="html_fce1547d9193ed383ee52ecd624185d8" style="width: 100.0%; height: 100.0%;"><b>Khajaguda Dump Area</b><br>Type: Dump Yard<br>AQI: 95</div>`)[0];
+                popup_3cb8cea2029026c2a2f23987b9d97856.setContent(html_fce1547d9193ed383ee52ecd624185d8);
             
         
 
-        marker_653e694d2cc4fe32a64c766d8d761b5f.bindPopup(popup_a15cfcdf11c549491230d7b0a2d9c7b9)
+        marker_0cb1e92ce3d8179d8afba13fecab32b0.bindPopup(popup_3cb8cea2029026c2a2f23987b9d97856)
         ;
 
         
     
     
-                marker_653e694d2cc4fe32a64c766d8d761b5f.setIcon(icon_fd0575d5d0825228da97970d9c820f13);
+                marker_0cb1e92ce3d8179d8afba13fecab32b0.setIcon(icon_61154ef0fd0696a381d2cd7cdbc2cf05);
             
     
-            var marker_5c280979a6c2ec8c7a9b052cc68b7266 = L.marker(
+            var marker_489f89143ea5c082e38b5d426c0f8133 = L.marker(
                 [17.3491, 78.5585],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_57404ba2936de4b766a93d143fab6ef1 = L.AwesomeMarkers.icon(
+            var icon_8ef21dc15af8a7b15c0c46e46c342c81 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -358,34 +358,34 @@ padding: 10px;
             );
         
     
-        var popup_32b3f43c7a3f6526325c1804714a2fcd = L.popup({
+        var popup_b8bcdd36406fc073a9ab21398a013e4f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_460f12ac0b1a52edf7d23b260c65b084 = $(`<div id="html_460f12ac0b1a52edf7d23b260c65b084" style="width: 100.0%; height: 100.0%;"><b>Kendriya Vidyalaya LB Nagar</b><br>Type: School<br>AQI: 165</div>`)[0];
-                popup_32b3f43c7a3f6526325c1804714a2fcd.setContent(html_460f12ac0b1a52edf7d23b260c65b084);
+                var html_865bba9d2cb4c96cac207da734a1fd9d = $(`<div id="html_865bba9d2cb4c96cac207da734a1fd9d" style="width: 100.0%; height: 100.0%;"><b>Kendriya Vidyalaya LB Nagar</b><br>Type: School<br>AQI: 165</div>`)[0];
+                popup_b8bcdd36406fc073a9ab21398a013e4f.setContent(html_865bba9d2cb4c96cac207da734a1fd9d);
             
         
 
-        marker_5c280979a6c2ec8c7a9b052cc68b7266.bindPopup(popup_32b3f43c7a3f6526325c1804714a2fcd)
+        marker_489f89143ea5c082e38b5d426c0f8133.bindPopup(popup_b8bcdd36406fc073a9ab21398a013e4f)
         ;
 
         
     
     
-                marker_5c280979a6c2ec8c7a9b052cc68b7266.setIcon(icon_57404ba2936de4b766a93d143fab6ef1);
+                marker_489f89143ea5c082e38b5d426c0f8133.setIcon(icon_8ef21dc15af8a7b15c0c46e46c342c81);
             
     
-            var marker_c0eab1aee21c1f5fa250434bc9cc8117 = L.marker(
+            var marker_bcd645efe12a8e2dbeda51c05099b2e3 = L.marker(
                 [17.3354, 78.5446],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_dbc352991b758d36e05c46dd41d0cd19 = L.AwesomeMarkers.icon(
+            var icon_34dfc471d5454f9153c773585f669051 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -396,34 +396,34 @@ padding: 10px;
             );
         
     
-        var popup_a6bc2326cc7e94105b936934d84990b4 = L.popup({
+        var popup_154215fd8b1b967c99c8b411eef503cd = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_304fbcbb71ef0f1ea5dd8b3fb3ab772a = $(`<div id="html_304fbcbb71ef0f1ea5dd8b3fb3ab772a" style="width: 100.0%; height: 100.0%;"><b>Autonagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 165</div>`)[0];
-                popup_a6bc2326cc7e94105b936934d84990b4.setContent(html_304fbcbb71ef0f1ea5dd8b3fb3ab772a);
+                var html_43958cef765ffc278588a61caafb544d = $(`<div id="html_43958cef765ffc278588a61caafb544d" style="width: 100.0%; height: 100.0%;"><b>Autonagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 165</div>`)[0];
+                popup_154215fd8b1b967c99c8b411eef503cd.setContent(html_43958cef765ffc278588a61caafb544d);
             
         
 
-        marker_c0eab1aee21c1f5fa250434bc9cc8117.bindPopup(popup_a6bc2326cc7e94105b936934d84990b4)
+        marker_bcd645efe12a8e2dbeda51c05099b2e3.bindPopup(popup_154215fd8b1b967c99c8b411eef503cd)
         ;
 
         
     
     
-                marker_c0eab1aee21c1f5fa250434bc9cc8117.setIcon(icon_dbc352991b758d36e05c46dd41d0cd19);
+                marker_bcd645efe12a8e2dbeda51c05099b2e3.setIcon(icon_34dfc471d5454f9153c773585f669051);
             
     
-            var marker_a6b3910a39225bc6e3c235d3302016cd = L.marker(
+            var marker_200195d8783f81488c35f5058f880e66 = L.marker(
                 [17.3956, 78.439],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_3e614ccfe8b764f8d82e93c841222381 = L.AwesomeMarkers.icon(
+            var icon_5b548b229c487d3ed1581262b66c08a5 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgreen",
   "iconColor": "white",
@@ -434,34 +434,34 @@ padding: 10px;
             );
         
     
-        var popup_a5c21521380f40a5ffd2e68271de9e65 = L.popup({
+        var popup_beb7bd6d847745cd6c6d0b83c77c4972 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_63f97f673e66a4fe820c9a7f16e87185 = $(`<div id="html_63f97f673e66a4fe820c9a7f16e87185" style="width: 100.0%; height: 100.0%;"><b>St Ann's College Mehdipatnam</b><br>Type: College<br>AQI: 85</div>`)[0];
-                popup_a5c21521380f40a5ffd2e68271de9e65.setContent(html_63f97f673e66a4fe820c9a7f16e87185);
+                var html_8d3aae10adbdc4804e0ae9f54ff2ade9 = $(`<div id="html_8d3aae10adbdc4804e0ae9f54ff2ade9" style="width: 100.0%; height: 100.0%;"><b>St Ann's College Mehdipatnam</b><br>Type: College<br>AQI: 85</div>`)[0];
+                popup_beb7bd6d847745cd6c6d0b83c77c4972.setContent(html_8d3aae10adbdc4804e0ae9f54ff2ade9);
             
         
 
-        marker_a6b3910a39225bc6e3c235d3302016cd.bindPopup(popup_a5c21521380f40a5ffd2e68271de9e65)
+        marker_200195d8783f81488c35f5058f880e66.bindPopup(popup_beb7bd6d847745cd6c6d0b83c77c4972)
         ;
 
         
     
     
-                marker_a6b3910a39225bc6e3c235d3302016cd.setIcon(icon_3e614ccfe8b764f8d82e93c841222381);
+                marker_200195d8783f81488c35f5058f880e66.setIcon(icon_5b548b229c487d3ed1581262b66c08a5);
             
     
-            var marker_1d88f1047c633ba2b54535ebd7d254e3 = L.marker(
+            var marker_74ba165e44f16c227789ca3266a68724 = L.marker(
                 [17.392, 78.441],
                 {
 }
-            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
         
     
-            var icon_580c473058774937d27ca8ac27cfd55c = L.AwesomeMarkers.icon(
+            var icon_8b1fbee4cdc232139b62ad61ba182cb2 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgreen",
   "iconColor": "white",
@@ -472,24 +472,24 @@ padding: 10px;
             );
         
     
-        var popup_e1151c7d698ff25b71ab1d58ba5e2d77 = L.popup({
+        var popup_00f5472975e7b3ffa1cf537fe58c2ba3 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_30b13051cd629ef6f8b007d85e98a049 = $(`<div id="html_30b13051cd629ef6f8b007d85e98a049" style="width: 100.0%; height: 100.0%;"><b>Mehdipatnam Dump Site</b><br>Type: Dump Yard<br>AQI: 85</div>`)[0];
-                popup_e1151c7d698ff25b71ab1d58ba5e2d77.setContent(html_30b13051cd629ef6f8b007d85e98a049);
+                var html_ab09ac47da9a50ee258f739fb39d38b4 = $(`<div id="html_ab09ac47da9a50ee258f739fb39d38b4" style="width: 100.0%; height: 100.0%;"><b>Mehdipatnam Dump Site</b><br>Type: Dump Yard<br>AQI: 85</div>`)[0];
+                popup_00f5472975e7b3ffa1cf537fe58c2ba3.setContent(html_ab09ac47da9a50ee258f739fb39d38b4);
             
         
 
-        marker_1d88f1047c633ba2b54535ebd7d254e3.bindPopup(popup_e1151c7d698ff25b71ab1d58ba5e2d77)
+        marker_74ba165e44f16c227789ca3266a68724.bindPopup(popup_00f5472975e7b3ffa1cf537fe58c2ba3)
         ;
 
         
     
     
-                marker_1d88f1047c633ba2b54535ebd7d254e3.setIcon(icon_580c473058774937d27ca8ac27cfd55c);
+                marker_74ba165e44f16c227789ca3266a68724.setIcon(icon_8b1fbee4cdc232139b62ad61ba182cb2);
             
 </script>
 </html>

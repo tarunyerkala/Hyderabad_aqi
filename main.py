@@ -53,8 +53,8 @@ legend_html = """
 <div style="
 position: fixed; 
 bottom: 50px; left: 50px; width: 200px; height: 150px; 
-background-color: white; 
-border:2px solid grey; z-index:9999; font-size:14px;
+background-color: #f6efef; border-radius:20px;
+border:2px solid grey; z-index:9999; font-size:15px;
 padding: 10px;
 ">
 <b>AQI Legend</b><br>
