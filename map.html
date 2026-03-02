@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5f8c3e101dc8190a682110452accb419 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+position: fixed; 
+bottom: 50px; left: 50px; width: 200px; height: 150px; 
+background-color: white; 
+border:2px solid grey; z-index:9999; font-size:14px;
+padding: 10px;
+">
+<b>AQI Legend</b><br>
+<span style="color:green">●</span> 0–50 (Good)<br>
+<span style="color:lightgreen">●</span> 51–100 (Moderate)<br>
+<span style="color:orange">●</span> 101–150 (Unhealthy for Sensitive)<br>
+<span style="color:red">●</span> 151+ (Unhealthy)<br>
+</div>
+    
+            <div class="folium-map" id="map_5f8c3e101dc8190a682110452accb419" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5f8c3e101dc8190a682110452accb419 = L.map(
+                "map_5f8c3e101dc8190a682110452accb419",
+                {
+                    center: [17.385, 78.4867],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b94b2cf18ef87570d4ce7e95bc793a48 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b94b2cf18ef87570d4ce7e95bc793a48.addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var marker_e0a1c2699d2516f3a90307d2416d1a13 = L.marker(
+                [17.4065, 78.5281],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_0d5ed7c825eda5b183e7d2992e704869 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae57b89ececdc0a34d73f60037884359 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d2da2111dabf624bd04759fa24abe8e = $(`<div id="html_8d2da2111dabf624bd04759fa24abe8e" style="width: 100.0%; height: 100.0%;"><b>Osmania University</b><br>Type: University<br>AQI: 180</div>`)[0];
+                popup_ae57b89ececdc0a34d73f60037884359.setContent(html_8d2da2111dabf624bd04759fa24abe8e);
+            
+        
+
+        marker_e0a1c2699d2516f3a90307d2416d1a13.bindPopup(popup_ae57b89ececdc0a34d73f60037884359)
+        ;
+
+        
+    
+    
+                marker_e0a1c2699d2516f3a90307d2416d1a13.setIcon(icon_0d5ed7c825eda5b183e7d2992e704869);
+            
+    
+            var marker_dc13ded05e7fe78f885dd574b79e0779 = L.marker(
+                [17.5373, 78.5838],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_e0701809cacbf312ce943021aa43afcf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30d06e714c57d04a09ab3889fc71c177 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46fabc38b823f467618d0929860a60bd = $(`<div id="html_46fabc38b823f467618d0929860a60bd" style="width: 100.0%; height: 100.0%;"><b>Jawaharnagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 180</div>`)[0];
+                popup_30d06e714c57d04a09ab3889fc71c177.setContent(html_46fabc38b823f467618d0929860a60bd);
+            
+        
+
+        marker_dc13ded05e7fe78f885dd574b79e0779.bindPopup(popup_30d06e714c57d04a09ab3889fc71c177)
+        ;
+
+        
+    
+    
+                marker_dc13ded05e7fe78f885dd574b79e0779.setIcon(icon_e0701809cacbf312ce943021aa43afcf);
+            
+    
+            var marker_b7d1c511a7e3f479111c3ee7b905cb50 = L.marker(
+                [17.4933, 78.3915],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_048a45800307871fe5222ce899ed6efe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f620712b407fc0fe3b367dba45c3b53 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_331af3d1c1376b6f9df499786a494c28 = $(`<div id="html_331af3d1c1376b6f9df499786a494c28" style="width: 100.0%; height: 100.0%;"><b>JNTU Hyderabad</b><br>Type: College<br>AQI: 140</div>`)[0];
+                popup_7f620712b407fc0fe3b367dba45c3b53.setContent(html_331af3d1c1376b6f9df499786a494c28);
+            
+        
+
+        marker_b7d1c511a7e3f479111c3ee7b905cb50.bindPopup(popup_7f620712b407fc0fe3b367dba45c3b53)
+        ;
+
+        
+    
+    
+                marker_b7d1c511a7e3f479111c3ee7b905cb50.setIcon(icon_048a45800307871fe5222ce899ed6efe);
+            
+    
+            var marker_c09ddb9fa4a821c96b4e47b74c6413d4 = L.marker(
+                [17.4925, 78.393],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_d40cb20971d45c786ccb18d38ad5d2b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64c8115598c1e15394a2084fab834c14 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b21758c5e140f537db3624a2bd28512 = $(`<div id="html_7b21758c5e140f537db3624a2bd28512" style="width: 100.0%; height: 100.0%;"><b>Kukatpally Dump Yard</b><br>Type: Dump Yard<br>AQI: 140</div>`)[0];
+                popup_64c8115598c1e15394a2084fab834c14.setContent(html_7b21758c5e140f537db3624a2bd28512);
+            
+        
+
+        marker_c09ddb9fa4a821c96b4e47b74c6413d4.bindPopup(popup_64c8115598c1e15394a2084fab834c14)
+        ;
+
+        
+    
+    
+                marker_c09ddb9fa4a821c96b4e47b74c6413d4.setIcon(icon_d40cb20971d45c786ccb18d38ad5d2b3);
+            
+    
+            var marker_b4b2f5f675f69392b850fdd09f537fb2 = L.marker(
+                [17.4173, 78.3618],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_ded348ed9a31c1b1617fdc7e0e608adc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b9f7387bf61df95a559aff4ba4c0d0d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_566e1d952a89e6065268d0a28a8f73b0 = $(`<div id="html_566e1d952a89e6065268d0a28a8f73b0" style="width: 100.0%; height: 100.0%;"><b>Delhi Public School Khajaguda</b><br>Type: School<br>AQI: 95</div>`)[0];
+                popup_0b9f7387bf61df95a559aff4ba4c0d0d.setContent(html_566e1d952a89e6065268d0a28a8f73b0);
+            
+        
+
+        marker_b4b2f5f675f69392b850fdd09f537fb2.bindPopup(popup_0b9f7387bf61df95a559aff4ba4c0d0d)
+        ;
+
+        
+    
+    
+                marker_b4b2f5f675f69392b850fdd09f537fb2.setIcon(icon_ded348ed9a31c1b1617fdc7e0e608adc);
+            
+    
+            var marker_653e694d2cc4fe32a64c766d8d761b5f = L.marker(
+                [17.4165, 78.3635],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_fd0575d5d0825228da97970d9c820f13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a15cfcdf11c549491230d7b0a2d9c7b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b661418ab423f67a43b2e0de0abbc16a = $(`<div id="html_b661418ab423f67a43b2e0de0abbc16a" style="width: 100.0%; height: 100.0%;"><b>Khajaguda Dump Area</b><br>Type: Dump Yard<br>AQI: 95</div>`)[0];
+                popup_a15cfcdf11c549491230d7b0a2d9c7b9.setContent(html_b661418ab423f67a43b2e0de0abbc16a);
+            
+        
+
+        marker_653e694d2cc4fe32a64c766d8d761b5f.bindPopup(popup_a15cfcdf11c549491230d7b0a2d9c7b9)
+        ;
+
+        
+    
+    
+                marker_653e694d2cc4fe32a64c766d8d761b5f.setIcon(icon_fd0575d5d0825228da97970d9c820f13);
+            
+    
+            var marker_5c280979a6c2ec8c7a9b052cc68b7266 = L.marker(
+                [17.3491, 78.5585],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_57404ba2936de4b766a93d143fab6ef1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32b3f43c7a3f6526325c1804714a2fcd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_460f12ac0b1a52edf7d23b260c65b084 = $(`<div id="html_460f12ac0b1a52edf7d23b260c65b084" style="width: 100.0%; height: 100.0%;"><b>Kendriya Vidyalaya LB Nagar</b><br>Type: School<br>AQI: 165</div>`)[0];
+                popup_32b3f43c7a3f6526325c1804714a2fcd.setContent(html_460f12ac0b1a52edf7d23b260c65b084);
+            
+        
+
+        marker_5c280979a6c2ec8c7a9b052cc68b7266.bindPopup(popup_32b3f43c7a3f6526325c1804714a2fcd)
+        ;
+
+        
+    
+    
+                marker_5c280979a6c2ec8c7a9b052cc68b7266.setIcon(icon_57404ba2936de4b766a93d143fab6ef1);
+            
+    
+            var marker_c0eab1aee21c1f5fa250434bc9cc8117 = L.marker(
+                [17.3354, 78.5446],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_dbc352991b758d36e05c46dd41d0cd19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a6bc2326cc7e94105b936934d84990b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_304fbcbb71ef0f1ea5dd8b3fb3ab772a = $(`<div id="html_304fbcbb71ef0f1ea5dd8b3fb3ab772a" style="width: 100.0%; height: 100.0%;"><b>Autonagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 165</div>`)[0];
+                popup_a6bc2326cc7e94105b936934d84990b4.setContent(html_304fbcbb71ef0f1ea5dd8b3fb3ab772a);
+            
+        
+
+        marker_c0eab1aee21c1f5fa250434bc9cc8117.bindPopup(popup_a6bc2326cc7e94105b936934d84990b4)
+        ;
+
+        
+    
+    
+                marker_c0eab1aee21c1f5fa250434bc9cc8117.setIcon(icon_dbc352991b758d36e05c46dd41d0cd19);
+            
+    
+            var marker_a6b3910a39225bc6e3c235d3302016cd = L.marker(
+                [17.3956, 78.439],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_3e614ccfe8b764f8d82e93c841222381 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a5c21521380f40a5ffd2e68271de9e65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63f97f673e66a4fe820c9a7f16e87185 = $(`<div id="html_63f97f673e66a4fe820c9a7f16e87185" style="width: 100.0%; height: 100.0%;"><b>St Ann's College Mehdipatnam</b><br>Type: College<br>AQI: 85</div>`)[0];
+                popup_a5c21521380f40a5ffd2e68271de9e65.setContent(html_63f97f673e66a4fe820c9a7f16e87185);
+            
+        
+
+        marker_a6b3910a39225bc6e3c235d3302016cd.bindPopup(popup_a5c21521380f40a5ffd2e68271de9e65)
+        ;
+
+        
+    
+    
+                marker_a6b3910a39225bc6e3c235d3302016cd.setIcon(icon_3e614ccfe8b764f8d82e93c841222381);
+            
+    
+            var marker_1d88f1047c633ba2b54535ebd7d254e3 = L.marker(
+                [17.392, 78.441],
+                {
+}
+            ).addTo(map_5f8c3e101dc8190a682110452accb419);
+        
+    
+            var icon_580c473058774937d27ca8ac27cfd55c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1151c7d698ff25b71ab1d58ba5e2d77 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30b13051cd629ef6f8b007d85e98a049 = $(`<div id="html_30b13051cd629ef6f8b007d85e98a049" style="width: 100.0%; height: 100.0%;"><b>Mehdipatnam Dump Site</b><br>Type: Dump Yard<br>AQI: 85</div>`)[0];
+                popup_e1151c7d698ff25b71ab1d58ba5e2d77.setContent(html_30b13051cd629ef6f8b007d85e98a049);
+            
+        
+
+        marker_1d88f1047c633ba2b54535ebd7d254e3.bindPopup(popup_e1151c7d698ff25b71ab1d58ba5e2d77)
+        ;
+
+        
+    
+    
+                marker_1d88f1047c633ba2b54535ebd7d254e3.setIcon(icon_580c473058774937d27ca8ac27cfd55c);
+            
+</script>
+</html>
