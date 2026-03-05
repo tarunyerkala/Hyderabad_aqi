@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_4a65f8b0377a307440c7e0e7d4682fea {
+                #map_97793ae89bc6d0b972398688137cb6f1 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,28 +54,72 @@
 <body>
     
     
+<div id="detailsPage" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+font-family:Arial;
+padding:40px;
+">
+<h1 id="d_name"></h1>
+<div style="font-size:20px;margin-top:20px;">
+<p><b>Type:</b> <span id="d_type"></span></p>
+<p><b>AQI:</b> <span id="d_aqi"></span></p>
+<p><b>Latitude:</b> <span id="d_lat"></span></p>
+<p><b>Longitude:</b> <span id="d_lon"></span></p>
+</div>
+<button onclick="closeDetails()"
+style="margin-top:30px;padding:10px 20px;background:red;color:white;border:none;border-radius:6px;">
+Back to Map
+</button>
+</div>
+
+<script>
+function openDetails(name,type,aqi,lat,lon){
+    document.getElementById("detailsPage").style.display="block";
+    document.getElementById("d_name").innerHTML=name;
+    document.getElementById("d_type").innerHTML=type;
+    document.getElementById("d_aqi").innerHTML=aqi;
+    document.getElementById("d_lat").innerHTML=lat;
+    document.getElementById("d_lon").innerHTML=lon;
+}
+function closeDetails(){
+    document.getElementById("detailsPage").style.display="none";
+}
+</script>
+    
 <div style="
-position: fixed; 
-bottom: 50px; left: 50px; width: 200px; height: 150px; 
-background-color: #f6efef; border-radius:20px;
-border:2px solid grey; z-index:9999; font-size:15px;
+position: fixed;
+bottom: 50px;
+left: 50px;
+width: 200px;
+background-color: white;
+border:2px solid grey;
+z-index:9999;
+font-size:14px;
 padding: 10px;
+border-radius:7px;
 ">
 <b>AQI Legend</b><br>
 <span style="color:green">●</span> 0–50 (Good)<br>
 <span style="color:lightgreen">●</span> 51–100 (Moderate)<br>
-<span style="color:orange">●</span> 101–150 (Unhealthy for Sensitive)<br>
-<span style="color:red">●</span> 151+ (Unhealthy)<br>
+<span style="color:orange">●</span> 101–150 (Sensitive)<br>
+<span style="color:red">●</span> 151+ (Unhealthy)
 </div>
     
-            <div class="folium-map" id="map_4a65f8b0377a307440c7e0e7d4682fea" ></div>
+            <div class="folium-map" id="map_97793ae89bc6d0b972398688137cb6f1" ></div>
         
 </body>
 <script>
     
     
-            var map_4a65f8b0377a307440c7e0e7d4682fea = L.map(
-                "map_4a65f8b0377a307440c7e0e7d4682fea",
+            var map_97793ae89bc6d0b972398688137cb6f1 = L.map(
+                "map_97793ae89bc6d0b972398688137cb6f1",
                 {
                     center: [17.385, 78.4867],
                     crs: L.CRS.EPSG3857,
@@ -92,7 +136,7 @@ padding: 10px;
 
         
     
-            var tile_layer_83f2cbebb5ba1346d4f514dafdced272 = L.tileLayer(
+            var tile_layer_3f964080d1c3ba8f67573b351f022a36 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -109,169 +153,17 @@ padding: 10px;
             );
         
     
-            tile_layer_83f2cbebb5ba1346d4f514dafdced272.addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
+            tile_layer_3f964080d1c3ba8f67573b351f022a36.addTo(map_97793ae89bc6d0b972398688137cb6f1);
         
     
-            var marker_2a6a5cc027cfc14b16ebe502f7c3e97d = L.marker(
-                [17.4065, 78.5281],
-                {
-}
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
-        
-    
-            var icon_cce4e2ddcb3bfde6bcb83fab5eefd143 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_ba246beba1df3e9c34dc13c46a23a7d6 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_5cd4d0ec0c3321ab9dc2cf67996caf9d = $(`<div id="html_5cd4d0ec0c3321ab9dc2cf67996caf9d" style="width: 100.0%; height: 100.0%;"><b>Osmania University</b><br>Type: University<br>AQI: 180</div>`)[0];
-                popup_ba246beba1df3e9c34dc13c46a23a7d6.setContent(html_5cd4d0ec0c3321ab9dc2cf67996caf9d);
-            
-        
-
-        marker_2a6a5cc027cfc14b16ebe502f7c3e97d.bindPopup(popup_ba246beba1df3e9c34dc13c46a23a7d6)
-        ;
-
-        
-    
-    
-                marker_2a6a5cc027cfc14b16ebe502f7c3e97d.setIcon(icon_cce4e2ddcb3bfde6bcb83fab5eefd143);
-            
-    
-            var marker_ff631f7d88caaea74ebde55efa2e1b20 = L.marker(
-                [17.5373, 78.5838],
-                {
-}
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
-        
-    
-            var icon_8c13822b074e9bc6d37729d0bceadd48 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_30d99e74f90f185f0cc9cfbbb77688ac = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_0f5be7b9010226484fd26ae1db198370 = $(`<div id="html_0f5be7b9010226484fd26ae1db198370" style="width: 100.0%; height: 100.0%;"><b>Jawaharnagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 180</div>`)[0];
-                popup_30d99e74f90f185f0cc9cfbbb77688ac.setContent(html_0f5be7b9010226484fd26ae1db198370);
-            
-        
-
-        marker_ff631f7d88caaea74ebde55efa2e1b20.bindPopup(popup_30d99e74f90f185f0cc9cfbbb77688ac)
-        ;
-
-        
-    
-    
-                marker_ff631f7d88caaea74ebde55efa2e1b20.setIcon(icon_8c13822b074e9bc6d37729d0bceadd48);
-            
-    
-            var marker_1ee668e5343c95accfe5fa97d00b51b6 = L.marker(
-                [17.4933, 78.3915],
-                {
-}
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
-        
-    
-            var icon_b12b6df28c2567a60ab1775d05c4ca2f = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "orange",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_bf35ce6db6b5a8852cdbbff882a3a50a = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_cf28fa3a0a7e9619e4da986b57ff344a = $(`<div id="html_cf28fa3a0a7e9619e4da986b57ff344a" style="width: 100.0%; height: 100.0%;"><b>JNTU Hyderabad</b><br>Type: College<br>AQI: 140</div>`)[0];
-                popup_bf35ce6db6b5a8852cdbbff882a3a50a.setContent(html_cf28fa3a0a7e9619e4da986b57ff344a);
-            
-        
-
-        marker_1ee668e5343c95accfe5fa97d00b51b6.bindPopup(popup_bf35ce6db6b5a8852cdbbff882a3a50a)
-        ;
-
-        
-    
-    
-                marker_1ee668e5343c95accfe5fa97d00b51b6.setIcon(icon_b12b6df28c2567a60ab1775d05c4ca2f);
-            
-    
-            var marker_8b172ff8dec69c39ef7d1e777af1adf0 = L.marker(
-                [17.4925, 78.393],
-                {
-}
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
-        
-    
-            var icon_fb8ea4b083b056daab74ab55c87244bd = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "orange",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_69181bffe767ad06abda7f2dfb773705 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_d584603370822272cef256f17dc1f3a3 = $(`<div id="html_d584603370822272cef256f17dc1f3a3" style="width: 100.0%; height: 100.0%;"><b>Kukatpally Dump Yard</b><br>Type: Dump Yard<br>AQI: 140</div>`)[0];
-                popup_69181bffe767ad06abda7f2dfb773705.setContent(html_d584603370822272cef256f17dc1f3a3);
-            
-        
-
-        marker_8b172ff8dec69c39ef7d1e777af1adf0.bindPopup(popup_69181bffe767ad06abda7f2dfb773705)
-        ;
-
-        
-    
-    
-                marker_8b172ff8dec69c39ef7d1e777af1adf0.setIcon(icon_fb8ea4b083b056daab74ab55c87244bd);
-            
-    
-            var marker_7fa3ebe65ac5fdf1aadefebf1d759d8f = L.marker(
+            var marker_b7173a27af76d989122bfac8a0059409 = L.marker(
                 [17.4173, 78.3618],
                 {
 }
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
         
     
-            var icon_b38fda0a98b085b19e204b5720aadc6d = L.AwesomeMarkers.icon(
+            var icon_bf2de792a69b8d029144766a6fd309dd = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgreen",
   "iconColor": "white",
@@ -282,34 +174,34 @@ padding: 10px;
             );
         
     
-        var popup_331fb624efba734a91e4289be8b1dca1 = L.popup({
-  "maxWidth": "100%",
+        var popup_8ac84ad2f4f1a0cad05a3d178f764cea = L.popup({
+  "maxWidth": 250,
 });
 
         
             
-                var html_4a618f7fc859b142eba75fb021cd70b5 = $(`<div id="html_4a618f7fc859b142eba75fb021cd70b5" style="width: 100.0%; height: 100.0%;"><b>Delhi Public School Khajaguda</b><br>Type: School<br>AQI: 95</div>`)[0];
-                popup_331fb624efba734a91e4289be8b1dca1.setContent(html_4a618f7fc859b142eba75fb021cd70b5);
+                var html_144eef6af83bf9c1a15a512a7ae8120b = $(`<div id="html_144eef6af83bf9c1a15a512a7ae8120b" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Delhi Public School Khajaguda</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">95</b></p>         <a href="details.html?name=Delhi Public School Khajaguda&type=School&aqi=95&lat=17.4173&lon=78.3618" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_8ac84ad2f4f1a0cad05a3d178f764cea.setContent(html_144eef6af83bf9c1a15a512a7ae8120b);
             
         
 
-        marker_7fa3ebe65ac5fdf1aadefebf1d759d8f.bindPopup(popup_331fb624efba734a91e4289be8b1dca1)
+        marker_b7173a27af76d989122bfac8a0059409.bindPopup(popup_8ac84ad2f4f1a0cad05a3d178f764cea)
         ;
 
         
     
     
-                marker_7fa3ebe65ac5fdf1aadefebf1d759d8f.setIcon(icon_b38fda0a98b085b19e204b5720aadc6d);
+                marker_b7173a27af76d989122bfac8a0059409.setIcon(icon_bf2de792a69b8d029144766a6fd309dd);
             
     
-            var marker_0cb1e92ce3d8179d8afba13fecab32b0 = L.marker(
-                [17.4165, 78.3635],
+            var marker_b1da4fd3a9375f6581c2426265a53b9f = L.marker(
+                [17.4482, 78.3725],
                 {
 }
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
         
     
-            var icon_61154ef0fd0696a381d2cd7cdbc2cf05 = L.AwesomeMarkers.icon(
+            var icon_b0ada2d207165e20d938e4fdda877bfb = L.AwesomeMarkers.icon(
                 {
   "markerColor": "lightgreen",
   "iconColor": "white",
@@ -320,34 +212,376 @@ padding: 10px;
             );
         
     
-        var popup_3cb8cea2029026c2a2f23987b9d97856 = L.popup({
-  "maxWidth": "100%",
+        var popup_92872216099aca7efa48d553fa1018bc = L.popup({
+  "maxWidth": 250,
 });
 
         
             
-                var html_fce1547d9193ed383ee52ecd624185d8 = $(`<div id="html_fce1547d9193ed383ee52ecd624185d8" style="width: 100.0%; height: 100.0%;"><b>Khajaguda Dump Area</b><br>Type: Dump Yard<br>AQI: 95</div>`)[0];
-                popup_3cb8cea2029026c2a2f23987b9d97856.setContent(html_fce1547d9193ed383ee52ecd624185d8);
+                var html_a2539cc995f523bd97ed369719cd724b = $(`<div id="html_a2539cc995f523bd97ed369719cd724b" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Oakridge International School Gachibowli</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">88</b></p>         <a href="details.html?name=Oakridge International School Gachibowli&type=School&aqi=88&lat=17.4482&lon=78.3725" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_92872216099aca7efa48d553fa1018bc.setContent(html_a2539cc995f523bd97ed369719cd724b);
             
         
 
-        marker_0cb1e92ce3d8179d8afba13fecab32b0.bindPopup(popup_3cb8cea2029026c2a2f23987b9d97856)
+        marker_b1da4fd3a9375f6581c2426265a53b9f.bindPopup(popup_92872216099aca7efa48d553fa1018bc)
         ;
 
         
     
     
-                marker_0cb1e92ce3d8179d8afba13fecab32b0.setIcon(icon_61154ef0fd0696a381d2cd7cdbc2cf05);
+                marker_b1da4fd3a9375f6581c2426265a53b9f.setIcon(icon_b0ada2d207165e20d938e4fdda877bfb);
             
     
-            var marker_489f89143ea5c082e38b5d426c0f8133 = L.marker(
-                [17.3491, 78.5585],
+            var marker_e80cf016f0606fe7656f6e8d01bae169 = L.marker(
+                [17.4165, 78.456],
                 {
 }
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
         
     
-            var icon_8ef21dc15af8a7b15c0c46e46c342c81 = L.AwesomeMarkers.icon(
+            var icon_8a3cbd70daee0620ff24fd2254f523dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68e56bc1f3cddc19c6e691a7532ecb97 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_70f5a9b82e422f9b07f599821ac954f0 = $(`<div id="html_70f5a9b82e422f9b07f599821ac954f0" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Nasr School Banjara Hills</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">102</b></p>         <a href="details.html?name=Nasr School Banjara Hills&type=School&aqi=102&lat=17.4165&lon=78.456" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_68e56bc1f3cddc19c6e691a7532ecb97.setContent(html_70f5a9b82e422f9b07f599821ac954f0);
+            
+        
+
+        marker_e80cf016f0606fe7656f6e8d01bae169.bindPopup(popup_68e56bc1f3cddc19c6e691a7532ecb97)
+        ;
+
+        
+    
+    
+                marker_e80cf016f0606fe7656f6e8d01bae169.setIcon(icon_8a3cbd70daee0620ff24fd2254f523dd);
+            
+    
+            var marker_6db5ff833233e1874ccb129b86260237 = L.marker(
+                [17.395, 78.457],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_94cd8e6e3c37856c97145eed5daaefd4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4662574b4a3d5758f4c6991b6bd5e934 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cb0bd9a0d692daeea0de1dea5662c6d3 = $(`<div id="html_cb0bd9a0d692daeea0de1dea5662c6d3" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">St Ann's School Mehdipatnam</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">85</b></p>         <a href="details.html?name=St Ann's School Mehdipatnam&type=School&aqi=85&lat=17.395&lon=78.457" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_4662574b4a3d5758f4c6991b6bd5e934.setContent(html_cb0bd9a0d692daeea0de1dea5662c6d3);
+            
+        
+
+        marker_6db5ff833233e1874ccb129b86260237.bindPopup(popup_4662574b4a3d5758f4c6991b6bd5e934)
+        ;
+
+        
+    
+    
+                marker_6db5ff833233e1874ccb129b86260237.setIcon(icon_94cd8e6e3c37856c97145eed5daaefd4);
+            
+    
+            var marker_8a8423137c9ff27afdddfb5645b3509b = L.marker(
+                [17.4447, 78.4661],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_7dfea0f0a240fd9d27e00ea246b3cf0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb7435e0348135216bd8df06dbdccb07 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0fd58c03bf2494637874ec8df55bf87f = $(`<div id="html_0fd58c03bf2494637874ec8df55bf87f" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Kendriya Vidyalaya Begumpet</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">110</b></p>         <a href="details.html?name=Kendriya Vidyalaya Begumpet&type=School&aqi=110&lat=17.4447&lon=78.4661" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_fb7435e0348135216bd8df06dbdccb07.setContent(html_0fd58c03bf2494637874ec8df55bf87f);
+            
+        
+
+        marker_8a8423137c9ff27afdddfb5645b3509b.bindPopup(popup_fb7435e0348135216bd8df06dbdccb07)
+        ;
+
+        
+    
+    
+                marker_8a8423137c9ff27afdddfb5645b3509b.setIcon(icon_7dfea0f0a240fd9d27e00ea246b3cf0b);
+            
+    
+            var marker_101642b332f502b50c26de2add279650 = L.marker(
+                [17.449, 78.335],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_4f1149f3da09628703c86cd9e8f2fadf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b1d63ea156b7dda1bfc7baeb1c32ba9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d880a3d64a0789dfe464b276a5b7af0f = $(`<div id="html_d880a3d64a0789dfe464b276a5b7af0f" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Chirec International School</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">92</b></p>         <a href="details.html?name=Chirec International School&type=School&aqi=92&lat=17.449&lon=78.335" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_8b1d63ea156b7dda1bfc7baeb1c32ba9.setContent(html_d880a3d64a0789dfe464b276a5b7af0f);
+            
+        
+
+        marker_101642b332f502b50c26de2add279650.bindPopup(popup_8b1d63ea156b7dda1bfc7baeb1c32ba9)
+        ;
+
+        
+    
+    
+                marker_101642b332f502b50c26de2add279650.setIcon(icon_4f1149f3da09628703c86cd9e8f2fadf);
+            
+    
+            var marker_0bd794843fb3fd5f33b33d075dd004dd = L.marker(
+                [17.394, 78.554],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_acff674030bd93bb5fc195f3f72f89cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1696cdce8256f692999968acee4a324b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_65d784d6fbcf92576724e896ee758314 = $(`<div id="html_65d784d6fbcf92576724e896ee758314" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Johnson Grammar School Nacharam</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: School</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">120</b></p>         <a href="details.html?name=Johnson Grammar School Nacharam&type=School&aqi=120&lat=17.394&lon=78.554" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_1696cdce8256f692999968acee4a324b.setContent(html_65d784d6fbcf92576724e896ee758314);
+            
+        
+
+        marker_0bd794843fb3fd5f33b33d075dd004dd.bindPopup(popup_1696cdce8256f692999968acee4a324b)
+        ;
+
+        
+    
+    
+                marker_0bd794843fb3fd5f33b33d075dd004dd.setIcon(icon_acff674030bd93bb5fc195f3f72f89cd);
+            
+    
+            var marker_a696aeadfe5dbdc28a267e0d6e268aa8 = L.marker(
+                [17.4065, 78.5281],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_b5a1b57d196342023e389e1728297acd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a7cec8c0d1abf4d6d5cbdb10e2d54d6e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_df0b3b9b61c1097c84fc4313587efca1 = $(`<div id="html_df0b3b9b61c1097c84fc4313587efca1" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Osmania University</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: University</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">150</b></p>         <a href="details.html?name=Osmania University&type=University&aqi=150&lat=17.4065&lon=78.5281" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_a7cec8c0d1abf4d6d5cbdb10e2d54d6e.setContent(html_df0b3b9b61c1097c84fc4313587efca1);
+            
+        
+
+        marker_a696aeadfe5dbdc28a267e0d6e268aa8.bindPopup(popup_a7cec8c0d1abf4d6d5cbdb10e2d54d6e)
+        ;
+
+        
+    
+    
+                marker_a696aeadfe5dbdc28a267e0d6e268aa8.setIcon(icon_b5a1b57d196342023e389e1728297acd);
+            
+    
+            var marker_7d07f46a608d3e5c4e61edc081c74c29 = L.marker(
+                [17.4933, 78.3915],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_45ff6279882c01f43daeeda797143e67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38ef8c4bd63c18c004442b8b6c2bcbf0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fce8ad8461df67860a6a00a1e1e099eb = $(`<div id="html_fce8ad8461df67860a6a00a1e1e099eb" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">JNTU Hyderabad</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: University</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">135</b></p>         <a href="details.html?name=JNTU Hyderabad&type=University&aqi=135&lat=17.4933&lon=78.3915" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_38ef8c4bd63c18c004442b8b6c2bcbf0.setContent(html_fce8ad8461df67860a6a00a1e1e099eb);
+            
+        
+
+        marker_7d07f46a608d3e5c4e61edc081c74c29.bindPopup(popup_38ef8c4bd63c18c004442b8b6c2bcbf0)
+        ;
+
+        
+    
+    
+                marker_7d07f46a608d3e5c4e61edc081c74c29.setIcon(icon_45ff6279882c01f43daeeda797143e67);
+            
+    
+            var marker_a9107ed8a8f5d476aecfb23661155559 = L.marker(
+                [17.4433, 78.381],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_7c8982360cf5be2b0a0bdc30964069fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d4e26dd2b69b431b978f89e57bbb099 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_76ba9f78d235efe74d027628dce335e8 = $(`<div id="html_76ba9f78d235efe74d027628dce335e8" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">HITEC City Financial District</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: IT Hub</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">125</b></p>         <a href="details.html?name=HITEC City Financial District&type=IT Hub&aqi=125&lat=17.4433&lon=78.381" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_8d4e26dd2b69b431b978f89e57bbb099.setContent(html_76ba9f78d235efe74d027628dce335e8);
+            
+        
+
+        marker_a9107ed8a8f5d476aecfb23661155559.bindPopup(popup_8d4e26dd2b69b431b978f89e57bbb099)
+        ;
+
+        
+    
+    
+                marker_a9107ed8a8f5d476aecfb23661155559.setIcon(icon_7c8982360cf5be2b0a0bdc30964069fc);
+            
+    
+            var marker_9870a4186cac6259f984e16b988183a2 = L.marker(
+                [17.453, 78.468],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_0696ad71d2015fe46ba16ba4daf0c06b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4cc54ddd64a56177dec87e1f5262718 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1d6125e8a37327b558e610f04ca50a91 = $(`<div id="html_1d6125e8a37327b558e610f04ca50a91" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Begumpet Airport Area</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: IT Hub</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">130</b></p>         <a href="details.html?name=Begumpet Airport Area&type=IT Hub&aqi=130&lat=17.453&lon=78.468" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_f4cc54ddd64a56177dec87e1f5262718.setContent(html_1d6125e8a37327b558e610f04ca50a91);
+            
+        
+
+        marker_9870a4186cac6259f984e16b988183a2.bindPopup(popup_f4cc54ddd64a56177dec87e1f5262718)
+        ;
+
+        
+    
+    
+                marker_9870a4186cac6259f984e16b988183a2.setIcon(icon_0696ad71d2015fe46ba16ba4daf0c06b);
+            
+    
+            var marker_2636a36d074c0aab38ce46a51c227d73 = L.marker(
+                [17.428, 78.455],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_42476d2df0a75a4d6b680e0c9608e3dd = L.AwesomeMarkers.icon(
                 {
   "markerColor": "red",
   "iconColor": "white",
@@ -358,112 +592,36 @@ padding: 10px;
             );
         
     
-        var popup_b8bcdd36406fc073a9ab21398a013e4f = L.popup({
-  "maxWidth": "100%",
+        var popup_7b3a14e73c24f76480c906dc51c0a1e5 = L.popup({
+  "maxWidth": 250,
 });
 
         
             
-                var html_865bba9d2cb4c96cac207da734a1fd9d = $(`<div id="html_865bba9d2cb4c96cac207da734a1fd9d" style="width: 100.0%; height: 100.0%;"><b>Kendriya Vidyalaya LB Nagar</b><br>Type: School<br>AQI: 165</div>`)[0];
-                popup_b8bcdd36406fc073a9ab21398a013e4f.setContent(html_865bba9d2cb4c96cac207da734a1fd9d);
+                var html_18fb6f869e87bab18ac2367b4b7416aa = $(`<div id="html_18fb6f869e87bab18ac2367b4b7416aa" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Jawaharnagar Dump Yard</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Dump Yard</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">180</b></p>         <a href="details.html?name=Jawaharnagar Dump Yard&type=Dump Yard&aqi=180&lat=17.428&lon=78.455" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_7b3a14e73c24f76480c906dc51c0a1e5.setContent(html_18fb6f869e87bab18ac2367b4b7416aa);
             
         
 
-        marker_489f89143ea5c082e38b5d426c0f8133.bindPopup(popup_b8bcdd36406fc073a9ab21398a013e4f)
+        marker_2636a36d074c0aab38ce46a51c227d73.bindPopup(popup_7b3a14e73c24f76480c906dc51c0a1e5)
         ;
 
         
     
     
-                marker_489f89143ea5c082e38b5d426c0f8133.setIcon(icon_8ef21dc15af8a7b15c0c46e46c342c81);
+                marker_2636a36d074c0aab38ce46a51c227d73.setIcon(icon_42476d2df0a75a4d6b680e0c9608e3dd);
             
     
-            var marker_bcd645efe12a8e2dbeda51c05099b2e3 = L.marker(
-                [17.3354, 78.5446],
-                {
-}
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
-        
-    
-            var icon_34dfc471d5454f9153c773585f669051 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_154215fd8b1b967c99c8b411eef503cd = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_43958cef765ffc278588a61caafb544d = $(`<div id="html_43958cef765ffc278588a61caafb544d" style="width: 100.0%; height: 100.0%;"><b>Autonagar Dump Yard</b><br>Type: Dump Yard<br>AQI: 165</div>`)[0];
-                popup_154215fd8b1b967c99c8b411eef503cd.setContent(html_43958cef765ffc278588a61caafb544d);
-            
-        
-
-        marker_bcd645efe12a8e2dbeda51c05099b2e3.bindPopup(popup_154215fd8b1b967c99c8b411eef503cd)
-        ;
-
-        
-    
-    
-                marker_bcd645efe12a8e2dbeda51c05099b2e3.setIcon(icon_34dfc471d5454f9153c773585f669051);
-            
-    
-            var marker_200195d8783f81488c35f5058f880e66 = L.marker(
-                [17.3956, 78.439],
-                {
-}
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
-        
-    
-            var icon_5b548b229c487d3ed1581262b66c08a5 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "lightgreen",
-  "iconColor": "white",
-  "icon": "info-sign",
-  "prefix": "glyphicon",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_beb7bd6d847745cd6c6d0b83c77c4972 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_8d3aae10adbdc4804e0ae9f54ff2ade9 = $(`<div id="html_8d3aae10adbdc4804e0ae9f54ff2ade9" style="width: 100.0%; height: 100.0%;"><b>St Ann's College Mehdipatnam</b><br>Type: College<br>AQI: 85</div>`)[0];
-                popup_beb7bd6d847745cd6c6d0b83c77c4972.setContent(html_8d3aae10adbdc4804e0ae9f54ff2ade9);
-            
-        
-
-        marker_200195d8783f81488c35f5058f880e66.bindPopup(popup_beb7bd6d847745cd6c6d0b83c77c4972)
-        ;
-
-        
-    
-    
-                marker_200195d8783f81488c35f5058f880e66.setIcon(icon_5b548b229c487d3ed1581262b66c08a5);
-            
-    
-            var marker_74ba165e44f16c227789ca3266a68724 = L.marker(
+            var marker_46488ab7aa4bf95e391e7c7889301a61 = L.marker(
                 [17.392, 78.441],
                 {
 }
-            ).addTo(map_4a65f8b0377a307440c7e0e7d4682fea);
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
         
     
-            var icon_8b1fbee4cdc232139b62ad61ba182cb2 = L.AwesomeMarkers.icon(
+            var icon_6df0678ba8b247d2d3b16e139df4bfe8 = L.AwesomeMarkers.icon(
                 {
-  "markerColor": "lightgreen",
+  "markerColor": "red",
   "iconColor": "white",
   "icon": "info-sign",
   "prefix": "glyphicon",
@@ -472,24 +630,290 @@ padding: 10px;
             );
         
     
-        var popup_00f5472975e7b3ffa1cf537fe58c2ba3 = L.popup({
-  "maxWidth": "100%",
+        var popup_f7af09f877c34c12adf6031af2de8554 = L.popup({
+  "maxWidth": 250,
 });
 
         
             
-                var html_ab09ac47da9a50ee258f739fb39d38b4 = $(`<div id="html_ab09ac47da9a50ee258f739fb39d38b4" style="width: 100.0%; height: 100.0%;"><b>Mehdipatnam Dump Site</b><br>Type: Dump Yard<br>AQI: 85</div>`)[0];
-                popup_00f5472975e7b3ffa1cf537fe58c2ba3.setContent(html_ab09ac47da9a50ee258f739fb39d38b4);
+                var html_eafd505c5efdc3ff130c306bcd63bac6 = $(`<div id="html_eafd505c5efdc3ff130c306bcd63bac6" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Mehdipatnam Dump Area</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Dump Yard</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">165</b></p>         <a href="details.html?name=Mehdipatnam Dump Area&type=Dump Yard&aqi=165&lat=17.392&lon=78.441" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_f7af09f877c34c12adf6031af2de8554.setContent(html_eafd505c5efdc3ff130c306bcd63bac6);
             
         
 
-        marker_74ba165e44f16c227789ca3266a68724.bindPopup(popup_00f5472975e7b3ffa1cf537fe58c2ba3)
+        marker_46488ab7aa4bf95e391e7c7889301a61.bindPopup(popup_f7af09f877c34c12adf6031af2de8554)
         ;
 
         
     
     
-                marker_74ba165e44f16c227789ca3266a68724.setIcon(icon_8b1fbee4cdc232139b62ad61ba182cb2);
+                marker_46488ab7aa4bf95e391e7c7889301a61.setIcon(icon_6df0678ba8b247d2d3b16e139df4bfe8);
+            
+    
+            var marker_aa71d22bba93e7659650f9ef88cd6eff = L.marker(
+                [17.4925, 78.393],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_15bad2d082e09b88bd773c3f90aa69bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1e623a9990b023201294d80144591338 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c52c1a9438224ffabc9805fe73d69a9e = $(`<div id="html_c52c1a9438224ffabc9805fe73d69a9e" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Kukatpally Dump Spot</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Dump Yard</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">170</b></p>         <a href="details.html?name=Kukatpally Dump Spot&type=Dump Yard&aqi=170&lat=17.4925&lon=78.393" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_1e623a9990b023201294d80144591338.setContent(html_c52c1a9438224ffabc9805fe73d69a9e);
+            
+        
+
+        marker_aa71d22bba93e7659650f9ef88cd6eff.bindPopup(popup_1e623a9990b023201294d80144591338)
+        ;
+
+        
+    
+    
+                marker_aa71d22bba93e7659650f9ef88cd6eff.setIcon(icon_15bad2d082e09b88bd773c3f90aa69bc);
+            
+    
+            var marker_8b9da0f95a1a137fa998aed2e60d188e = L.marker(
+                [17.3354, 78.5446],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_3c72a285b88b9d5374974e43f2f87c4c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa7eefa1bd3e51ed3821192a161db16b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f7a5b9c3a9198c067e2de1780cb3c613 = $(`<div id="html_f7a5b9c3a9198c067e2de1780cb3c613" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Autonagar Dump Yard</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Dump Yard</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">175</b></p>         <a href="details.html?name=Autonagar Dump Yard&type=Dump Yard&aqi=175&lat=17.3354&lon=78.5446" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_fa7eefa1bd3e51ed3821192a161db16b.setContent(html_f7a5b9c3a9198c067e2de1780cb3c613);
+            
+        
+
+        marker_8b9da0f95a1a137fa998aed2e60d188e.bindPopup(popup_fa7eefa1bd3e51ed3821192a161db16b)
+        ;
+
+        
+    
+    
+                marker_8b9da0f95a1a137fa998aed2e60d188e.setIcon(icon_3c72a285b88b9d5374974e43f2f87c4c);
+            
+    
+            var marker_1bf1c5e704a5eae682fb9b17a4b46680 = L.marker(
+                [17.484, 78.455],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_dda656a97343b2e7af1167434ed61672 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2e92cb1c4f3cc65c51633c9d7f148b6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_31cc8d9ef9d6d8382e00eaba92940735 = $(`<div id="html_31cc8d9ef9d6d8382e00eaba92940735" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Jeedimetla Industrial Area</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Industrial</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">160</b></p>         <a href="details.html?name=Jeedimetla Industrial Area&type=Industrial&aqi=160&lat=17.484&lon=78.455" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_b2e92cb1c4f3cc65c51633c9d7f148b6.setContent(html_31cc8d9ef9d6d8382e00eaba92940735);
+            
+        
+
+        marker_1bf1c5e704a5eae682fb9b17a4b46680.bindPopup(popup_b2e92cb1c4f3cc65c51633c9d7f148b6)
+        ;
+
+        
+    
+    
+                marker_1bf1c5e704a5eae682fb9b17a4b46680.setIcon(icon_dda656a97343b2e7af1167434ed61672);
+            
+    
+            var marker_5e15552a401a29d47e5f4124590091e0 = L.marker(
+                [17.48, 78.25],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_41d47d2c7509c9ed215568c7361503a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_696e76a09bb6e88ea0dbf81f15d9fd09 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c8a8a2d1aab75a12999311f1a385a24e = $(`<div id="html_c8a8a2d1aab75a12999311f1a385a24e" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Patancheru Industrial Area</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Industrial</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">185</b></p>         <a href="details.html?name=Patancheru Industrial Area&type=Industrial&aqi=185&lat=17.48&lon=78.25" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_696e76a09bb6e88ea0dbf81f15d9fd09.setContent(html_c8a8a2d1aab75a12999311f1a385a24e);
+            
+        
+
+        marker_5e15552a401a29d47e5f4124590091e0.bindPopup(popup_696e76a09bb6e88ea0dbf81f15d9fd09)
+        ;
+
+        
+    
+    
+                marker_5e15552a401a29d47e5f4124590091e0.setIcon(icon_41d47d2c7509c9ed215568c7361503a7);
+            
+    
+            var marker_d1a686dd8d3ceb854b2db508b1ffe62e = L.marker(
+                [17.383, 78.556],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_07b41aa993a413dc5e1be72d3765143f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_28b98935cb5e596b00faa1dc4e6c1f18 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f1ac8feacc4b3f89bf3edef1e78ae3df = $(`<div id="html_f1ac8feacc4b3f89bf3edef1e78ae3df" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Nacharam Industrial Area</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Industrial</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">150</b></p>         <a href="details.html?name=Nacharam Industrial Area&type=Industrial&aqi=150&lat=17.383&lon=78.556" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_28b98935cb5e596b00faa1dc4e6c1f18.setContent(html_f1ac8feacc4b3f89bf3edef1e78ae3df);
+            
+        
+
+        marker_d1a686dd8d3ceb854b2db508b1ffe62e.bindPopup(popup_28b98935cb5e596b00faa1dc4e6c1f18)
+        ;
+
+        
+    
+    
+                marker_d1a686dd8d3ceb854b2db508b1ffe62e.setIcon(icon_07b41aa993a413dc5e1be72d3765143f);
+            
+    
+            var marker_8e74756ed3007be3f7887b58585bced2 = L.marker(
+                [17.467, 78.468],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_cd994a872538cf3272b894d6f0ca0f10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_118f272075439adb17d24709b750e63c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c95e372d7fcd072567c17385e3c86ec = $(`<div id="html_2c95e372d7fcd072567c17385e3c86ec" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Balanagar Industrial Zone</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Industrial</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">155</b></p>         <a href="details.html?name=Balanagar Industrial Zone&type=Industrial&aqi=155&lat=17.467&lon=78.468" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_118f272075439adb17d24709b750e63c.setContent(html_2c95e372d7fcd072567c17385e3c86ec);
+            
+        
+
+        marker_8e74756ed3007be3f7887b58585bced2.bindPopup(popup_118f272075439adb17d24709b750e63c)
+        ;
+
+        
+    
+    
+                marker_8e74756ed3007be3f7887b58585bced2.setIcon(icon_cd994a872538cf3272b894d6f0ca0f10);
+            
+    
+            var marker_339d98cb0ff759d58dff235745ca6709 = L.marker(
+                [17.347, 78.428],
+                {
+}
+            ).addTo(map_97793ae89bc6d0b972398688137cb6f1);
+        
+    
+            var icon_8c4563457420fcbb5ba2c342b2c375e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_778f066ae69047b284b560e2d5fec7a5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_29f3c5bfcd45b4fb71dff742f6a68ecf = $(`<div id="html_29f3c5bfcd45b4fb71dff742f6a68ecf" style="width: 100.0%; height: 100.0%;">     <div style="     font-family:Arial;     width:180px;     text-align:center;     ">         <h4 style="margin:5px;color:#222;">Kattedan Industrial Area</h4>         <p style="font-size:13px;color:#666;margin:4px;">Type: Industrial</p>         <p style="font-size:13px;margin:4px;">AQI: <b style="color:#d9534f;">165</b></p>         <a href="details.html?name=Kattedan Industrial Area&type=Industrial&aqi=165&lat=17.347&lon=78.428" target="_blank"         style="         display:block;         margin-top:8px;         padding:8px;         background:#28a745;         color:white;         text-decoration:none;         border-radius:6px;         font-weight:bold;         ">         View Full Details         </a>     </div>     </div>`)[0];
+                popup_778f066ae69047b284b560e2d5fec7a5.setContent(html_29f3c5bfcd45b4fb71dff742f6a68ecf);
+            
+        
+
+        marker_339d98cb0ff759d58dff235745ca6709.bindPopup(popup_778f066ae69047b284b560e2d5fec7a5)
+        ;
+
+        
+    
+    
+                marker_339d98cb0ff759d58dff235745ca6709.setIcon(icon_8c4563457420fcbb5ba2c342b2c375e1);
             
 </script>
 </html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Location Details</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(120deg,#667eea,#764ba2);
+}
+
+/* CARD */
+
+.card{
+width:450px;
+background:white;
+border-radius:18px;
+padding:35px;
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* HEADER */
+
+.header{
+margin-bottom:25px;
+}
+
+.header h1{
+font-size:26px;
+color:#333;
+margin-bottom:10px;
+}
+
+/* AQI BADGE */
+
+.badge{
+display:inline-block;
+padding:6px 14px;
+border-radius:20px;
+font-size:14px;
+font-weight:600;
+color:white;
+}
+
+/* INFO GRID */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+margin-top:20px;
+}
+
+.item{
+background:#cbdedc;
+padding:15px;
+border-radius:10px;
+}
+
+.label{
+font-size:13px;
+color:#777;
+margin-bottom:5px;
+}
+
+.value{
+font-size:17px;
+font-weight:600;
+color:#333;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:30px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#5a67d8;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.btn:hover{
+background:#434190;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header">
+<h1 id="name"></h1>
+<span id="aqiBadge" class="badge">AQI</span>
+</div>
+
+<div class="grid">
+
+<div class="item">
+<div class="label">Type</div>
+<div id="type" class="value"></div>
+</div>
+
+<div class="item">
+<div class="label">AQI Value</div>
+<div id="aqi" class="value"></div>
+</div>
+
+<div class="item">
+<div class="label">Latitude</div>
+<div id="lat" class="value"></div>
+</div>
+
+<div class="item">
+<div class="label">Longitude</div>
+<div id="lon" class="value"></div>
+</div>
+
+</div>
+
+<button class="btn" onclick="window.close()">Close</button>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const name=params.get("name");
+const type=params.get("type");
+const aqi=params.get("aqi");
+const lat=params.get("lat");
+const lon=params.get("lon");
+
+document.getElementById("name").innerText=name;
+document.getElementById("type").innerText=type;
+document.getElementById("aqi").innerText=aqi;
+document.getElementById("lat").innerText=lat;
+document.getElementById("lon").innerText=lon;
+
+const badge=document.getElementById("aqiBadge");
+
+if(aqi<=50){
+badge.style.background="#2ecc71";
+badge.innerText="Good";
+}
+else if(aqi<=100){
+badge.style.background="#27ae60";
+badge.innerText="Moderate";
+}
+else if(aqi<=150){
+badge.style.background="#f39c12";
+badge.innerText="Sensitive";
+}
+else{
+badge.style.background="#e74c3c";
+badge.innerText="Unhealthy";
+}
+
+</script>
+
+</body>
+</html>
